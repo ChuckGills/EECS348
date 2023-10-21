@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
     scanf("%.2f", sales[11]);
 
 
-    for(i=0;i<=11;i++) 
+    for(int i=0;i<=11;i++) 
     {
         printf("sale %.2f",sales[i]);
     }

@@ -4,17 +4,29 @@
 #include <iomanip>
 using namespace std;
 
+
+//adds and prints matrix
+void matrixAdd(int **mat1,int **mat2,int size);
+//=======================================================
+void matrixSub(int **mat1,int **mat2,int size);
+void matrixMult(int **mat1,int **mat2,int size);
+
+//=====================================================
 int main(int argc, char const *argv[])
 {
     std::ifstream file("matrix.txt");
-    std::string container;
-    
     
     int size;
     file >> size;
-    int mat1[size][size];
-    int mat2[size][size];
-    
+    static const int globalSize=size;
+    //dynamically allocates memory
+    int** mat1 = new int*[size];
+    int** mat2 = new int*[size];
+
+    for (int i = 0; i < size; i++) {
+        mat1[i] = new int[size];
+        mat2[i] = new int[size];
+    }
 
     int data[100];
     int count = 0;
@@ -50,10 +62,21 @@ int main(int argc, char const *argv[])
     
     
     file.close();
-     int addmat[size][size];
-     int submat[size][size];
-     int multmat[size][size];
-    //adds matrix
+    matrixAdd(mat1,mat2,size);
+    matrixSub(mat1,mat2,size);
+    matrixMult(mat1,mat2,size);
+
+    
+    
+
+   
+    return 0;
+}
+//adds and prints matrix
+void matrixAdd(int **mat1, int **mat2,int size)
+{
+int addmat[size][size];
+//adds matrix
     for(int i =0;i<size;i++)
     {
         for(int j=0;j<size;j++)
@@ -65,6 +88,29 @@ int main(int argc, char const *argv[])
     std::cout<<endl<<"Matrix 1 + Matrix 2: "<<endl<<setw(3)<<addmat[0][0]<<" "<<setw(3)<<addmat[0][1]<<" "<<setw(3)<<addmat[0][2]<<endl;
     std::cout<<setw(3)<<addmat[1][0]<<" "<<setw(3)<<addmat[1][1]<<" "<<setw(3)<<addmat[1][2]<<endl;
     std::cout<<setw(3)<<addmat[2][0]<<" "<<setw(3)<<addmat[2][1]<<" "<<setw(3)<<addmat[2][2]<<endl;
+    
+}
+//=======================================================
+//subtracts and prints matrix
+void matrixSub(int **mat1,int **mat2,int size)
+{
+    int submat[size][size];
+    //subtracts matrix
+    for(int i =0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+        submat[i][j]=mat1[i][j]-mat2[i][j];
+        }
+    }
+    //prints matrix
+    std::cout<<endl<<"Matrix 1 - Matrix 2: "<<endl<<setw(3)<<submat[0][0]<<" "<<setw(3)<<submat[0][1]<<" "<<setw(3)<<submat[0][2]<<endl;
+    std::cout<<setw(3)<<submat[1][0]<<" "<<setw(3)<<submat[1][1]<<" "<<setw(3)<<submat[1][2]<<endl;
+    std::cout<<setw(3)<<submat[2][0]<<" "<<setw(3)<<submat[2][1]<<" "<<setw(3)<<submat[2][2]<<endl;
+}
+void matrixMult(int **mat1,int **mat2,int size)
+{
+    int multmat[size][size];
     //matrix multiplication
     for(int i =0;i<size;i++)
     {
@@ -84,21 +130,5 @@ int main(int argc, char const *argv[])
     std::cout<<endl<<"Matrix 1 X Matrix 2: "<<endl<<setw(3)<<multmat[0][0]<<" "<<setw(3)<<multmat[0][1]<<" "<<setw(3)<<multmat[0][2]<<endl;
     std::cout<<setw(3)<<multmat[1][0]<<" "<<setw(3)<<multmat[1][1]<<" "<<setw(3)<<multmat[1][2]<<endl;
     std::cout<<setw(3)<<multmat[2][0]<<" "<<setw(3)<<multmat[2][1]<<" "<<setw(3)<<multmat[2][2]<<endl;
-    //subtracts matrix
-    for(int i =0;i<size;i++)
-    {
-        for(int j=0;j<size;j++)
-        {
-        submat[i][j]=mat1[i][j]-mat2[i][j];
-        }
-    }
-    std::cout<<endl<<"Matrix 1 - Matrix 2: "<<endl<<setw(3)<<submat[0][0]<<" "<<setw(3)<<submat[0][1]<<" "<<setw(3)<<submat[0][2]<<endl;
-    std::cout<<setw(3)<<submat[1][0]<<" "<<setw(3)<<submat[1][1]<<" "<<setw(3)<<submat[1][2]<<endl;
-    std::cout<<setw(3)<<submat[2][0]<<" "<<setw(3)<<submat[2][1]<<" "<<setw(3)<<submat[2][2]<<endl;
-
-    
-    
-
-   
-    return 0;
+  
 }
