@@ -1,0 +1,27 @@
+ul {
+    list-style-type: "-"; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  li {
+    margin: 5pt 0; 
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+
+img {
+  margin: 0 auto;
+  text-align: center; 
+
+    
+  }
+    h1{text-align: center;}
+    h3{text-align: center;}
+    p{text-align: center;}
+    ul{text-align: center;}

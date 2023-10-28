@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <h1>EECS348 Lab 07 Practice 3</h1>
+    <h3>by Charlie Gillund</h3>
+</head>
+<script>
+function password() {
+    //get inputs 
+    let one = document.getElementById("p1").value;
+    let two = document.getElementById("p2").value;
+
+    //checks if passwords match and of proper length
+    if (one!=two) 
+    {
+        alert("Passwords don't match");
+    } 
+    else if (one.length<=8)
+    {
+        alert("The length of the password is less than 8 letters!");
+    } 
+    else 
+    {
+        alert("All Good");
+    }
+}
+
+</script>
+<body>
+    <p>
+    Password:&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<input type="text" id="p1" value=""> <br>
+    Confirm Password: <input type="text" id="p2" > <br>
+    </p>
+    <button onclick="password()">Continue</button> <br>
+</body>
+
+
+</html>
