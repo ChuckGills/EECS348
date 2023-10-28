@@ -1,0 +1,8 @@
+During Lab 07 I was assisted with generative ai. Due to Html 
+Css Javascript, and php. I was unfamiliar with most of the topics
+used in this lab. I used chat gpt to troubleshoot problems in my code
+and to speed up debuging times by having it find the syntax errors. Besides Chat Gpt 
+I also used the scource ode from the example as a guide to make this code. Being completely new at php
+Chat gpt was able to assist part 4 greatly by explaining how php works and its basic syntaxes.
+Overall I think that although I used Chat gpt that it did not deminish my work on this lab, but just was just used as a 
+tool to troubleshoot and exedite problem solving
