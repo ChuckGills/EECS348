@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <h1>EECS348 Lab 07 Practice 2</h1>
+    <h3>by Charlie Gillund</h3>
+</head>
+
+
+
+
+<body>
+    <div id="p" style="border-style: solid; border-width: 0px;">
+        You can change the text by inputting values into the boxes below.
+    </div>
+
+    <script>
+        function change(){
+                 //paragraph to get changed tag
+             var p = document.getElementById("p");
+                 //gets elements
+             var red = document.getElementById("RedBorder").value;
+             var green = document.getElementById("GreenBorder").value;
+             var blue = document.getElementById("BlueBorder").value;
+                 //width value
+             var width = document.getElementById("width").value;
+                 //background values
+             var backR = document.getElementById("backR").value;
+             var backG = document.getElementById("backG").value;
+             var backB = document.getElementById("backB").value;
+
+             //sets the values
+             p.style.borderColor = 'rgb('+red+','+green+','+blue+')';
+             p.style.borderWidth = width;
+             p.style.backgroundColor = 'rgb('+backR+','+backG+','+backB+')';;
+        }
+    </script>
+    Border Red Value: <input type="text" id="RedBorder" value=""> <br>
+    Border Green Value: <input type="text" id="GreenBorder" value=""> <br>
+    Border Blue Value: <input type="text" id="BlueBorder" value=""> <br>
+
+    Border Width: <input type="text" id="width" value=""> <br>
+
+    Background Red Value: <input type="text" id="backR" value=""> <br>
+    Background Green Value: <input type="text" id="backG" value=""> <br>
+    Background Blue Value: <input type="text" id="backB" value=""> <br>
+    <button onclick="change()">Set Parameters</button> <br>
+</body>
+
+</html>
