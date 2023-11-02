@@ -1,4 +1,4 @@
-During Lab 07 I was assisted with generative ai. Due to Html 
+During Lab 07 I was assisted with generative AI. Due to Html 
 Css Javascript, and php. I was unfamiliar with most of the topics
 used in this lab. I used chat gpt to troubleshoot problems in my code
 and to speed up debuging times by having it find the syntax errors. Besides Chat Gpt 
